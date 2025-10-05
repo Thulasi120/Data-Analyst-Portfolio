@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tulasi Madhav | Data Analyst</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+   <style>
+    /* -------- General Styles -------- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #00c6ff;
+}
+
+/* -------- Navbar -------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00c6ff, #00ff9d);
+  background-clip: text;
+  color: transparent;
+
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+nav ul li {
+  font-weight: 500;
+}
+nav ul li a {
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* -------- Hero Section -------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.hero h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00c6ff, #00ff9d);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero h2 {
+  font-size: 2em;
+  margin-top: 10px;
+  color: #ddd;
+}
+.hero p {
+  margin-top: 20px;
+  max-width: 700px;
+  font-size: 1.2em;
+  color: #bbb;
+}
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #00c6ff, #00ff9d);
+  color: #fff;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+.btn-dark {
+  background: #111;
+  color: #fff;
+  border: 1px solid #444;
+}
+.btn-dark:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* -------- Section Cards (for About, Skills, Education, Experience) -------- */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+  color: #eee;
+}
+
+.section-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
+}
+
+/* -------- Section Headings -------- */
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.6em;
+  font-weight: 700;
+  color: #00c6ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #00c6ff, #00ff9d);
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+/* -------- Buttons for Sections -------- */
+.section-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c6ff, #00ff9d);
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0,198,255,0.3);
+}
+.section-btn:hover {
+  background: linear-gradient(90deg, #00ff9d, #00c6ff);
+  transform: scale(1.08);
+  box-shadow: 0px 6px 20px rgba(0,198,255,0.5);
+}
+
+/* -------- Project Cards Upgrade -------- */
+.project-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
+}
+.project-card h3 {
+  color: #00ff9d;
+  font-size: 1.4em;
+  margin-bottom: 12px;
+}
+
+/* -------- Contact Links Upgrade -------- */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.contact-links a {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid #00c6ff;
+  color: #00c6ff;
+  transition: all 0.3s ease;
+}
+.contact-links a:hover {
+  background: linear-gradient(90deg, #00c6ff, #00ff9d);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 18px rgba(0,198,255,0.5);
+}
+.project-links {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  margin-top: 10px;
+}
+
+.section-btn {
+  padding: 8px 14px;
+  text-decoration: none;
+  background-color: #0073e6;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.section-btn:hover {
+  background-color: #005bb5;
+}
+
+/* -------- LinkedIn QR Section -------- */
+.qr-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-section p {
+  font-weight: 500;
+  color: #ddd; /* changed to match dark theme */
+}
+.qr-section img {
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 2px solid #0077b5; /* LinkedIn blue */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 119, 181, 0.3);
+}
+
+.qr-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 119, 181, 0.5);
+}
+
+   </style>
+</head>
+<body>
+
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Tulasi Madhav</div>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#about">ABOUT ME</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#education">EDUCATION</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#experience">EXPERIENCE</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Tulasi Madhav Gopisetty</h1>
+    <h2>Data Analyst</h2>
+    <p>Aspiring Data Analyst skilled in Python, SQL, Excel, Power BI, and turning data into actionable insights.</p>
+    <div class="buttons">
+      <a href="#about" class="btn btn-primary">LEARN MORE ABOUT ME</a>
+      <a href="Tulasi_Analyst_Resumeee.pdf" class="btn btn-dark" download="Tulasi_Analyst_Resumeee.pdf">DOWNLOAD RESUME</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="section-card">
+      <div class="contact-links">
+        <a href="mailto:thulasimadhav12@gmail.com">📧 Email</a>
+        <a href="https://github.com/Thulasi120" target="_blank">💻 GitHub</a>
+    </div>
+    <div class="qr-section">
+      <p>📱 Scan to view my LinkedIn profile instantly:</p>
+      <img src="LinkedIn QR code.jpg" alt="LinkedIn QR Code" width="150">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="section-card">
+      <p>I am a detail-oriented Data Analyst skilled in SQL, Python, Excel, Tableau, and Power BI. 
+      I have hands-on experience in data cleaning, visualization, and predictive modelling through internships and academic projects. 
+      Passionate about transforming raw data into actionable insights.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="section-card skills-block">
+      <p><b>Programming & Data Tools:</b> Python (Pandas, NumPy, Matplotlib), SQL, Excel (PivotTables, VLOOKUP, Charts)</p>
+      <p><b>Data Visualization Tools:</b> Power BI, Tableau</p>
+      <p><b>Database:</b> MySQL</p>
+      <p><b>ETL & Data Pipelines:</b> Apache, Airflow, Talend, Alteryx</p>
+      <p><b>Big Data & Cloud (Basic Exposure):</b> Apache Spark, Hadoop, AWS (S3, Redshift, QuickSight)</p>
+      <p><b>Version Control & Collaboration:</b> Git, GitHub</p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="section-card edu-item">
+      <h3>Bachelor of Engineering in Information Technology</h3>
+      <p>Kallam Harinadhreddy Institute of Technology, Andhra Pradesh (2020 – 2024)</p>
+      <ul>
+        <li>Graduated among top 5% of batch</li>
+        <li>Relevant Coursework: Database Management, Statistical Methods</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+<div class="project-card">
+  <h3>Supply Chain Management System</h3>
+  <ul class="project-points">
+    <li>📊 Built dashboards in <b>Power BI</b> for procurement and inventory, improving forecasting by <b>25%</b>.</li>
+    <li>🐍 Utilized <b>Python (Pandas, NumPy)</b>, <b>SQL</b>, and <b>Excel</b> for data preprocessing, analysis, and visualization.</li>
+    <li>📦 Integrated <b>Power BI dashboards</b> for monitoring stock levels, vendor performance, and order fulfilment KPIs.</li>
+  </ul>
+  <a href="Supply_Chain_Management_System_Report.pdf" class="section-btn" target="_blank">View Report</a>
+  <a href="https://github.com/Thulasi120/Supply-Chain-Management-System"class="section-btn" target="_blank">Repository</a>
+</div>
+<div class="project-card">
+  <h3>Workforce Insights – HR Analytics</h3>
+  <ul class="project-points">
+    <li>📊 Developed interactive <b>HR dashboards</b> to track attrition, demographics, and KPIs.</li>
+    <li>⚡ Automated reporting workflows, reducing manual reporting effort by <b>30%</b>.</li>
+    <li>👥 Enabled leadership to identify attrition risks and improve employee engagement strategies.</li>
+  </ul>
+  <a href="HR_Data_Analysis_Report.pdf" target="_blank" class="section-btn">View Report</a>
+  <a href="https://github.com/Thulasi120/HR-Data-Analysis-" target="_blank" class="section-btn">Repository</a>
+</div>
+
+<div class="project-card">
+  <h3>Business Performance – Sales Analytics</h3>
+  <ul class="project-points">
+    <li>📈 Created <b>sales dashboards</b> to track revenue, products, and regional performance.</li>
+    <li>🌍 Enhanced decision-making by identifying high-performing products and underperforming regions.</li>
+    <li>🎯 Improved sales forecasting accuracy by <b>20%</b> through advanced analytics.</li>
+  </ul>
+   <a href="SALES_DATA_ANALYSIS_REPORT.pdf" class="section-btn" target="_blank">View Report</a>
+   <a href="https://github.com/Thulasi120/Sales-Analytics" class="section-btn" target="_blank">Repository</a>
+</div>
+<div class="project-card">
+  <h3>Food Demand Prediction (SPSS)</h3>
+  <ul class="project-points">
+    <li>📊 Applied <b>multiple linear regression in SPSS</b> to predict base food prices using checkout price, number of orders, and time-based variables.</li>
+    <li>✅ Achieved <b>91% R² accuracy</b> with statistically significant predictors, ensuring robust forecasting performance.</li>
+    <li>🧪 Gained hands-on experience with <b>ANOVA, coefficients, and model evaluation</b> in SPSS for predictive analytics.</li>
+  </ul>
+</div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="section-card experience-item">
+      <h3>Data Analyst Intern – Mallikarjuna Infosys</h3>
+      <p><i>Dec 2024 – Mar 2025</i></p>
+      <ul>
+        <li>Developed Power BI dashboards integrated with GCP, reducing reporting time by 50%.</li>
+        <li>Collected, cleaned, and validated large datasets using SQL and Excel, ensuring accuracy and consistency.</li>
+        <li>Showcased problem-solving, collaboration, agile, and communication skills.</li>
+      </ul>
+    </div>
+    <div class="section-card experience-item">
+      <h3>Python for Data Analyst Intern – Mallikarjuna Infosys</h3>
+      <p><i>Aug 2023 – Oct 2023</i></p>
+      <ul>
+        <li>Built predictive models to forecast weekly sales demand, leading to 10% reduction in inventory costs.</li>
+        <li>Optimized Power BI dashboards for 10+ products, improving efficiency by 15%.</li>
+        <li>Designed visualizations that highlighted key business trends, improving report precision by 15%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Tulasi Madhav Gopisetty | Data Analyst Portfolio</p>
+  </footer>
+
+</body>
+</html>
